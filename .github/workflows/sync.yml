@@ -9,18 +9,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync:
-    name: Sync fork
-    runs-on: ubuntu-latest
-    if: ${{ github.event.repository.fork }}
+  # sync:
+  #   name: Sync fork
+  #   runs-on: ubuntu-latest
+  #   if: ${{ github.event.repository.fork }}
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
 
-      - name: Sync fork
-        run: gh repo sync ${{ github.repository }}
-        env:
-          GH_TOKEN: ${{ github.token }}
+  #     - name: Sync fork
+  #       run: gh repo sync ${{ github.repository }}
+  #       env:
+  #         GH_TOKEN: ${{ github.token }}
 
-      - uses: gautamkrishnar/keepalive-workflow@v1
+  #     - uses: gautamkrishnar/keepalive-workflow@v1
